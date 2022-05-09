@@ -1,4 +1,5 @@
 import React from "react";
+import { AnimatePresence } from "framer-motion";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
@@ -11,15 +12,17 @@ import Project4 from "./pages/Project4";
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projet1" element={<Project1 />} />
-        <Route path="/projet2" element={<Project2 />} />
-        <Route path="/projet3" element={<Project3 />} />
-        <Route path="/projet4" element={<Project4 />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <AnimatePresence>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projet1" element={<Project1 />} />
+          <Route path="/projet2" element={<Project2 />} />
+          <Route path="/projet3" element={<Project3 />} />
+          <Route path="/projet4" element={<Project4 />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </AnimatePresence>
     </BrowserRouter>
   );
 };
